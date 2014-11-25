@@ -1,0 +1,23 @@
+{
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "jeckhart/storm-mesos",
+      "network" : "BRIDGE",
+      "portMappings": [
+        { "containerPort": 8080, "hostPort": 0, "protocol": "tcp" }
+      ]
+    }
+  },
+  "env": {
+    "STORM_ZK_SERVERS":"172.31.0.11,172.31.0.12,172.31.0.13",
+    "MESOS_MASTER_URL":"zk://172.31.0.11:2181,172.31.0.12:2181,172.31.0.13:2181/mesos"
+  },
+  "id": "storm-mesos",
+  "instances": "1",
+  "cpus": "0.1",
+  "mem": "128",
+  "uris": [],
+  "cmd": "",
+  "ports": []
+}
